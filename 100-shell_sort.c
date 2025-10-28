@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
-* shell_sort = sorts an array in ascending order 
+* shell_sort - sorts an array in ascending order
 * using the Shell sort algorithm and the Knuth sequence.
 *
 * @array: array of integers.
@@ -13,7 +13,7 @@ void shell_sort(int *array, size_t size)
 	size_t i, j;
 	int temp;
 
- 	size_t gap = 1;
+		size_t gap = 1;
 
 	if (!array || size < 2)
 	return;
@@ -23,19 +23,19 @@ void shell_sort(int *array, size_t size)
 
 	while (gap > 0)
 	{
-    for (i = gap; i < size; i++)
-    {
-        temp = array[i];
-        j = i;
+	for (i = gap; i < size; i++)
+	{
+	temp = array[i];
+	j = i;
 
-        while (j >= gap && array[j - gap] > temp)
-        {
-            array[j] = array[j - gap];
-            j -= gap;
-        }
+	while (j >= gap && array[j - gap] > temp)
+	{
+	array[j] = array[j - gap];
+	j -= gap;
+	}
 
-        array[j] = temp;
-    }
+	array[j] = temp;
+	}
 	print_array(array, size);
 	gap = (gap - 1) / 3;
 }
