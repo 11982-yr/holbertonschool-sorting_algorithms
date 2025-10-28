@@ -1,9 +1,9 @@
-# holbertonschool-sorting_algorithms
-A holberton school sorting algorithms team project
+#H1 Holbertonschool-sorting_algorithms
+A Holberton school sorting algorithms team project
 
 
 
-Data Structure
+#H2 Data Structure
 For this project we have the following Functions, print_array, and print_list:
 ```c
 #include <stdlib.h>
@@ -57,7 +57,7 @@ void print_list(const listint_t *list)
 }
 ```
 
-Doubly linked list:
+? Doubly linked list:
 
 ```c
 **
@@ -85,16 +85,71 @@ void quick_sort(int *array, size_t size);
 ```
 
 Description
-In this project, we will explore at least four sorting algorithms and learn how to evaluate their time complexity using Big O notation. We will also examine how to choose the most efficient algorithm for different inputs. Special attention will be given to stable sorting algorithms, understanding what makes them stable and why stability matters in practice. By the end of the project, you will have a solid grasp of both the theoretical and practical aspects of sorting, enabling you to select the right algorithm for any scenario.
+In this project, we will foucs on implementing and analyzing algorithms in C, and work with both arrays and doubly linked lists. This project include the follwoing task:
+1. Bubble Sorts
+2. Insertion Sort
+3. Selection Sort
+4. Quick Sort
+
+And for each, we will write the time complexity in Big O notation for:
+- Best
+- Average
+- Worst
+cases.
 
 Example Implementation
-Here's how we used one of the prototypes 
+Here's how we used
+```c
+void bubble_sort(int *array, size_t size);
+```
+to sort an array of integers in ascending order:
+```c
+#include "sort.h"
+
+/**
+* bubble_sort - sorts an array in ascending order using Bubble sort.
+*
+* @array: the array to sort
+* @size: the size of the array
+*/
+
+void bubble_sort(int *array, size_t size)
+{
+	size_t i, n = size;
+	int temp;
+	int swapped;
+
+	if (array == NULL || size < 2)
+	return;
+
+	do {
+	swapped = 0;
+
+	for (i = 0; i < n - 1; i++)
+	{
+	if (array[i] > array[i + 1])
+	{
+	temp = array[i];
+	array[i] = array[i + 1];
+	array[i + 1] = temp;
+
+	print_array(array, size);
+	swapped = 1;
+	}
+}
+	n--;
+} while (swapped);
+}
+```
 
 
 Compilation
-We used the basic gcc compiler with the following flags:
+We compiled the project using the GCC compiler with the following base flags:
 
-$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89
+```c
+$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 <additional_flags>
+```
+for each task.
 
 Authors
 ```c
