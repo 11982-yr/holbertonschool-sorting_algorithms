@@ -1,9 +1,8 @@
-#H1 Holbertonschool-sorting_algorithms
+# Holbertonschool-sorting_algorithms
 A Holberton school sorting algorithms team project
 
+## Data Structure
 
-
-#H2 Data Structure
 For this project we have the following Functions, print_array, and print_list:
 ```c
 #include <stdlib.h>
@@ -57,7 +56,7 @@ void print_list(const listint_t *list)
 }
 ```
 
-? Doubly linked list:
+**Doubly linked list:**
 
 ```c
 **
@@ -75,7 +74,7 @@ typedef struct listint_s
 } listint_t;
 ```
 
-Prototypes
+## Prototypes
 
 ```c
 void bubble_sort(int *array, size_t size);
@@ -84,7 +83,8 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 ```
 
-Description
+## Description
+
 In this project, we will foucs on implementing and analyzing algorithms in C, and work with both arrays and doubly linked lists. This project include the follwoing task:
 1. Bubble Sorts
 2. Insertion Sort
@@ -92,17 +92,19 @@ In this project, we will foucs on implementing and analyzing algorithms in C, an
 4. Quick Sort
 
 And for each, we will write the time complexity in Big O notation for:
-- Best
-- Average
-- Worst
-cases.
+- Best cases
+- Average cases
+- Worst cases
 
-Example Implementation
-Here's how we used
+## Example Implementation
+
+Here's how we used the following prototype:
+
 ```c
 void bubble_sort(int *array, size_t size);
 ```
 to sort an array of integers in ascending order:
+
 ```c
 #include "sort.h"
 
@@ -143,7 +145,8 @@ void bubble_sort(int *array, size_t size)
 ```
 
 
-Compilation
+## Compilation
+
 We compiled the project using the GCC compiler with the following base flags:
 
 ```c
