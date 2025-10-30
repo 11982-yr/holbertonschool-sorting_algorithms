@@ -52,5 +52,9 @@ for (n = size; n > 0; n--)
   count_array[array[n - 1]]--;
 }
 
+for (n = 0; n < size; n++)
+        array[n] = output[n];
 
-
+    free(count_array);
+    free(output);
+}
