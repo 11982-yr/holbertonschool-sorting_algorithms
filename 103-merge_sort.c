@@ -3,13 +3,13 @@
 #include <stdio.h>
 
 /**
- * combine - Merge two sorted parts of an array
- * @arr: the array to sort
- * @buff: temporary buffer to hold sorted values
- * @start: starting index of left subarray
- * @mid: index separating left and right halves
- * @end: one past the last index of the right subarray
- */
+* combine - Merge two sorted parts of an array
+* @arr: the array to sort
+* @buff: temporary buffer to hold sorted values
+* @start: starting index of left subarray
+* @mid: index separating left and right halves
+* @end: one past the last index of the right subarray
+*/
 
 static void combine(int *arr, int *buff, size_t start, size_t mid, size_t end)
 {
@@ -41,12 +41,12 @@ static void combine(int *arr, int *buff, size_t start, size_t mid, size_t end)
 }
 
 /**
- * recursive_divide - Split array recursively and call merge step
- * @arr: array to sort
- * @buff: temporary array for merging
- * @start: left boundary index
- * @end: right boundary index
- */
+* recursive_divide - Split array recursively and call merge step
+* @arr: array to sort
+* @buff: temporary array for merging
+* @start: left boundary index
+* @end: right boundary index
+*/
 
 static void recursive_divide(int *arr, int *buff, size_t start, size_t end)
 {
@@ -62,11 +62,11 @@ static void recursive_divide(int *arr, int *buff, size_t start, size_t end)
 }
 
 /**
- * merge_sort - Sort an array of integers in ascending order
- * using the top-down Merge Sort algorithm
- * @array: pointer to array to sort
- * @size: number of elements in the array
- */
+* merge_sort - Sort an array of integers in ascending order
+* using the top-down Merge Sort algorithm
+* @array: pointer to array to sort
+* @size: number of elements in the array
+*/
 
 void merge_sort(int *array, size_t size)
 {
