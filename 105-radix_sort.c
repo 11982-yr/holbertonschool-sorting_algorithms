@@ -37,7 +37,8 @@ for (i = 1; i < 10; i++)
 count[i] += count[i - 1];
 for (i = size; i > 0; i--)
 {
-output[count[(array[i - 1] / exp) % 10] - 1] = array[i - 1];
+output[count[(array[i - 1] / exp) % 10] - 1]
+= array[i - 1];
 count[(array[i - 1] / exp) % 10]--;
 }
 for (i = 0; i < size; i++)
