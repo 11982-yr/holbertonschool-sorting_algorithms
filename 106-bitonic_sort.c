@@ -1,41 +1,39 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stlib.h>
 #include "sort.h"
 
 /**
  * swap_ints - Swap two integers
- * @a: First integer
- * @b: Second integer
+ * @a: first integer
+ * @b: second integer
  */
 void swap_ints(int *a, int *b)
 {
-    int tmp = *a;
+    int temp = *a;
     *a = *b;
-    *b = tmp;
+    *b = temp;
 }
 
 /**
- * bitonic_merge - Merges a bitonic sequence
- * @array: Array to sort
- * @size: Full array size
- * @start: Starting index of sequence
- * @seq: Length of sequence
- * @dir: Direction (1 for UP, 0 for DOWN)
+ * bitonic_merge - Merge bitonic sequence
+ * @array: array to sort
+ * @size: full array size
+ * @start: starting index of the sequence
+ * @seq: size of the sequence to merge
+ * @dir: direction (1 for ascending, 0 for descending)
  */
 void bitonic_merge(int *array, size_t size, size_t start, size_t seq, int dir)
 {
+    size_t i, k;
+
     if (seq > 1)
     {
-        size_t k = seq / 2, i;
-
+        k = seq / 2;
         for (i = start; i < start + k; i++)
         {
             if ((dir && array[i] > array[i + k]) ||
                 (!dir && array[i] < array[i + k]))
-            {
                 swap_ints(&array[i], &array[i + k]);
-                print_array(array, size);
-            }
         }
         bitonic_merge(array, size, start, k, dir);
         bitonic_merge(array, size, start + k, k, dir);
@@ -43,12 +41,12 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq, int dir)
 }
 
 /**
- * bitonic_seq - Builds bitonic sequence recursively
- * @array: Array to sort
- * @size: Full array size
- * @start: Starting index
- * @seq: Sequence size
- * @dir: Direction (1 for UP, 0 for DOWN)
+ * bitonic_seq - Build bitonic sequence recursively
+ * @array: array to sort
+ * @size: total array size
+ * @start: start index
+ * @seq: sequence size
+ * @dir: direction (1 for ascending, 0 for descending)
  */
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, int dir)
 {
@@ -71,9 +69,9 @@ void bitonic_seq(int *array, size_t size, size_t start, size_t seq, int dir)
 }
 
 /**
- * bitonic_sort - Sorts an array in ascending order using Bitonic sort
- * @array: Array to sort
- * @size: Array size (must be power of 2)
+ * bitonic_sort - Sorts an array using Bitonic sort algorithm
+ * @array: array to sort
+ * @size: array size (must be power of 2)
  */
 void bitonic_sort(int *array, size_t size)
 {
