@@ -20,8 +20,7 @@ int tmp = *a;
  * @seq: Number of elements in the sequence
  * @dir: 1 for ascending, 0 for descending
  */
-void bitonic_merge(int *array, size_t size, size_t start,
-size_t seq, int dir)
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq, int dir)
 {
 if (seq > 1)
 {
@@ -48,8 +47,7 @@ bitonic_merge(array, size, start + k, k, dir);
  * @seq: Number of elements in this sequence
  * @dir: 1 for ascending, 0 for descending
  */
-void bitonic_seq(int *array, size_t size, size_t start,
-size_t seq, int dir)
+void bitonic_seq(int *array, size_t size, size_t start, size_t seq, int dir)
 {
 if (seq > 1)
 {
